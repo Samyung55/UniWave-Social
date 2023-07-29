@@ -18,4 +18,29 @@ const ProgressiveImage = ({ defaultImageSource, source, style, ...props }) => {
             useNativeDriver: true,
         }).start();
     }
+
+    useEffect(() => {
+        return () => {
+            // Clean up any running animations and listeners when the component unmounts.
+            defaultImageAnimated.removeAllListeners();
+            imageAnimated.removeAllListeners();
+        }
+    }, [defaultImageAnimated, imageAnimated]);
+
+    return (
+        <View style={styles.container}>
+            <Animated.Image {...props}
+            source={defaultImageSource}
+            style={[style, { opacity: defaultImageAnimated }]}
+            onLoad={handleDefaultImageLoad}
+            blurRadius={1}
+            />
+            <Animated.Image {...props}
+            source={source} style={[style, { opacity: imageAnimated }, styles.imageOverlay]}
+            onLoad={handleImageLoad}
+            />
+        </View>
+    )
 }
+
+export default ProgressiveImage;
