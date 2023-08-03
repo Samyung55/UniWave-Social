@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, Stylesheet } from 'react-native'
-
+const img1 = require("../assets/onboarding-img1.png")
+const img2 = require("../assets/onboarding-img2.png")
+const img3 = require("../assets/onboarding-img3.png")
 import Onboarding from 'react-native-onboarding-swiper';
 
 const Dots = ({ selected }) => {
@@ -52,19 +54,19 @@ const OnboardingScreen = ({navigation}) => {
         pages={[
              {
                 backgroundColor: '#a6e4d0',
-                image: <Image source={require('../assets/onboarding-img1.png')} />,
+                image: <Image source={img1} />,
                 title: 'Connect to the World',
                 subtitle: 'A New Way To Connect With The World',
              },
              {
                 backgroundColor: '#fdeb93',
-                image: <Image source={require('.../assets/onboarding-img2.png')} />,
+                image: <Image source={img2} />,
                 title: 'Share Your Favorites',
                 subtitle: 'Share Your Thoughts With Similar Kind of People',
              },
              {
                 backgroundColor: '#e9bcbe',
-                image: <Image source={require('.../assets/onboarding-img3.png')} />,
+                image: <Image source={img3} />,
                 title: 'Become The Star',
                 subtitle: "Let The Spot Light Capture You",
              }
