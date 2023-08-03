@@ -44,3 +44,17 @@ const ProgressiveImage = ({ defaultImageSource, source, style, ...props }) => {
 }
 
 export default ProgressiveImage;
+
+const styles = StyleSheet.create({
+    container: {
+      backgroundColor: '#e1e4e8',
+    },
+    imageOverlay: {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+    }
+  });
+  
